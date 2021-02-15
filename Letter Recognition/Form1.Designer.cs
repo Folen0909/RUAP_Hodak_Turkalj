@@ -41,11 +41,15 @@ namespace Letter_Recognition
             // 
             this.canvas.BackColor = System.Drawing.SystemColors.HighlightText;
             this.canvas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.canvas.Cursor = System.Windows.Forms.Cursors.Cross;
             this.canvas.Location = new System.Drawing.Point(12, 12);
             this.canvas.Name = "canvas";
             this.canvas.Size = new System.Drawing.Size(560, 560);
             this.canvas.TabIndex = 0;
             this.canvas.TabStop = false;
+            this.canvas.MouseDown += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseDown);
+            this.canvas.MouseMove += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseMove);
+            this.canvas.MouseUp += new System.Windows.Forms.MouseEventHandler(this.canvas_MouseUp);
             // 
             // clearBtn
             // 
@@ -58,6 +62,7 @@ namespace Letter_Recognition
             this.clearBtn.TabIndex = 1;
             this.clearBtn.Text = "Clear";
             this.clearBtn.UseVisualStyleBackColor = false;
+            this.clearBtn.Click += new System.EventHandler(this.clearBtn_Click);
             // 
             // submitBtn
             // 
@@ -70,6 +75,7 @@ namespace Letter_Recognition
             this.submitBtn.TabIndex = 2;
             this.submitBtn.Text = "Submit";
             this.submitBtn.UseVisualStyleBackColor = false;
+            this.submitBtn.Click += new System.EventHandler(this.submitBtn_Click);
             // 
             // resultBtn
             // 
@@ -82,6 +88,7 @@ namespace Letter_Recognition
             this.resultBtn.TabIndex = 3;
             this.resultBtn.Text = "Result";
             this.resultBtn.UseVisualStyleBackColor = false;
+            this.resultBtn.Click += new System.EventHandler(this.resultBtn_Click);
             // 
             // PredictionLabel
             // 
@@ -105,6 +112,7 @@ namespace Letter_Recognition
             this.Controls.Add(this.canvas);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
