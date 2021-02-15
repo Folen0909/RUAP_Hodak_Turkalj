@@ -1,0 +1,15 @@
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\Letter Recognition.exe.config
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\Letter Recognition.exe
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\Letter Recognition.pdb
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\Newtonsoft.Json.dll
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\System.Net.Http.Formatting.dll
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\Newtonsoft.Json.xml
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\bin\Debug\System.Net.Http.Formatting.xml
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.csprojAssemblyReference.cache
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter_Recognition.Form1.resources
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter_Recognition.Properties.Resources.resources
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.csproj.GenerateResource.cache
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.csproj.CoreCompileInputs.cache
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.csproj.CopyComplete
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.exe
+C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.pdb
