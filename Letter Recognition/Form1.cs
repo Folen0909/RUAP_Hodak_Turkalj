@@ -12,16 +12,24 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
 
+
 namespace Letter_Recognition
 {
     public partial class Form1 : Form
     {
-        bool isMouseDown = new Boolean();
-        static string letter = "";
+        Pen pen;
+
         Point lastPoint = Point.Empty;
+
+        bool isMouseDown = new Boolean();
+
+        static string letter = "";
+
         public Form1()
         {
             InitializeComponent();
+            pen = new Pen(Color.Black, 20);
+            
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -46,9 +54,11 @@ namespace Letter_Recognition
                     }
                     using (Graphics g = Graphics.FromImage(canvas.Image))
                     {
-                        g.DrawLine(new Pen(Color.Black, 60), lastPoint, e.Location);
+                        pen.StartCap = pen.EndCap = System.Drawing.Drawing2D.LineCap.Round;
+                        g.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.AntiAlias;
+                        g.DrawLine(pen, lastPoint, e.Location);
                     }
-                    canvas.Image.Save("canvas.bmp");
+                    
                     canvas.Invalidate();
                     lastPoint = e.Location;
                 }
@@ -59,6 +69,7 @@ namespace Letter_Recognition
         {
             isMouseDown = false;
             lastPoint = Point.Empty;
+           
         }
         private void clearBtn_Click(object sender, EventArgs e)
         {
@@ -77,6 +88,7 @@ namespace Letter_Recognition
         }
         private void submitBtn_Click(object sender, EventArgs e)
         {
+            canvas.Image.Save("canvas.bmp");
             submitBtn.Enabled = false;
             Bitmap image = new Bitmap("canvas.bmp");
             Bitmap resized = new Bitmap(image, new Size(image.Width / 20, image.Height / 20));
