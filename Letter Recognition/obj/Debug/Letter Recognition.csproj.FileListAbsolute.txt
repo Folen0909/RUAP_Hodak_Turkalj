@@ -13,3 +13,18 @@ C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b
 C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.csproj.CopyComplete
 C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.exe
 C:\Users\David\Downloads\RUAP_Hodak_Turkalj-e3af168acf2b244ac3ccb4017ac50e4af61b78cc\Letter Recognition\obj\Debug\Letter Recognition.pdb
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\Letter Recognition.exe.config
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\Letter Recognition.exe
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\Letter Recognition.pdb
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\System.Net.Http.Formatting.dll
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\bin\Debug\System.Net.Http.Formatting.xml
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter Recognition.csprojAssemblyReference.cache
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter_Recognition.Form1.resources
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter_Recognition.Properties.Resources.resources
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter Recognition.csproj.GenerateResource.cache
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter Recognition.csproj.CoreCompileInputs.cache
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter Recognition.csproj.CopyComplete
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter Recognition.exe
+D:\Projects\RUAP projekt\RUAP_Hodak_Turkalj\Letter Recognition\obj\Debug\Letter Recognition.pdb

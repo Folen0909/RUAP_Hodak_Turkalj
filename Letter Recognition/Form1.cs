@@ -28,7 +28,7 @@ namespace Letter_Recognition
         public Form1()
         {
             InitializeComponent();
-            pen = new Pen(Color.Black, 20);
+            pen = new Pen(Color.Black, 55);
             
         }
         private void Form1_Load(object sender, EventArgs e)
@@ -91,7 +91,7 @@ namespace Letter_Recognition
             canvas.Image.Save("canvas.bmp");
             submitBtn.Enabled = false;
             Bitmap image = new Bitmap("canvas.bmp");
-            Bitmap resized = new Bitmap(image, new Size(image.Width / 20, image.Height / 20));
+            Bitmap resized = new Bitmap(image, new Size(28, 28));
             resized.Save("resized.bmp");
             int counter = 1;
             List<Dictionary<string, string>> jsonList = new List<Dictionary<string, string>>();
