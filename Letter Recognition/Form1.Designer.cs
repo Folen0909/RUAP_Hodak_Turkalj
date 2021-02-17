@@ -1,7 +1,7 @@
 ﻿
 namespace Letter_Recognition
 {
-    partial class Form1
+    partial class HandwritingRecognition
     {
         /// <summary>
         /// Required designer variable.
@@ -29,6 +29,7 @@ namespace Letter_Recognition
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(HandwritingRecognition));
             this.canvas = new System.Windows.Forms.PictureBox();
             this.clearBtn = new System.Windows.Forms.Button();
             this.submitBtn = new System.Windows.Forms.Button();
@@ -127,7 +128,7 @@ namespace Letter_Recognition
             this.dataGridView1.Size = new System.Drawing.Size(1434, 143);
             this.dataGridView1.TabIndex = 5;
             // 
-            // Form1
+            // HandwritingRecognition
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,11 +140,13 @@ namespace Letter_Recognition
             this.Controls.Add(this.submitBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.canvas);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "HandwritingRecognition";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Handwriting Recognition";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.canvas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

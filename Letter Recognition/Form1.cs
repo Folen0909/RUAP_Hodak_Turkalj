@@ -16,7 +16,7 @@ using System.Text.RegularExpressions;
 
 namespace Letter_Recognition
 {
-    public partial class Form1 : Form
+    public partial class HandwritingRecognition : Form
     {
         Pen pen;
         Point lastPoint;
@@ -25,7 +25,7 @@ namespace Letter_Recognition
         static string letter;
         static List<double> probabilities;
 
-        public Form1()
+        public HandwritingRecognition()
         {
             InitializeComponent();
 
