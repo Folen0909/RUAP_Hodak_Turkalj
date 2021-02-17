@@ -11,6 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Diagnostics;
+using System.Text.RegularExpressions;
 
 
 namespace Letter_Recognition
@@ -18,23 +19,33 @@ namespace Letter_Recognition
     public partial class Form1 : Form
     {
         Pen pen;
+        Point lastPoint;
 
-        Point lastPoint = Point.Empty;
-
-        bool isMouseDown = new Boolean();
-
-        static string letter = "";
+        bool isMouseDown;
+        static string letter;
+        static List<double> probabilities;
 
         public Form1()
         {
             InitializeComponent();
+
+            probabilities = new List<double>();
             pen = new Pen(Color.Black, 55);
+            lastPoint = new Point();
+
+            dataGridView1.ColumnCount = 26;
+
+            for (int i = 0; i < 26; i++)
+            {
+                string character = ((char)(i+65)).ToString();
+                dataGridView1.Columns[i].Name = character;
+            }
             
         }
         private void Form1_Load(object sender, EventArgs e)
         {
             resultBtn.Enabled = false;
-            submitBtn.Enabled = true;
+            submitBtn.Enabled = false;
         }
         private void canvas_MouseDown(object sender, MouseEventArgs e)
         {
@@ -43,10 +54,13 @@ namespace Letter_Recognition
         }
         private void canvas_MouseMove(object sender, MouseEventArgs e)
         {
+            
             if (isMouseDown == true)
             {
+                
                 if (lastPoint != null)
                 {
+                    submitBtn.Enabled = true;
                     if (canvas.Image == null)
                     {
                         Bitmap bmp = new Bitmap(canvas.Width, canvas.Height);
@@ -67,13 +81,18 @@ namespace Letter_Recognition
 
         private void canvas_MouseUp(object sender, MouseEventArgs e)
         {
+            
             isMouseDown = false;
             lastPoint = Point.Empty;
-           
+            
         }
         private void clearBtn_Click(object sender, EventArgs e)
         {
+            submitBtn.Enabled = false;
             PredictionLabel.Text = "";
+            probabilities.Clear();
+            dataGridView1.Rows.Clear();
+
             if (canvas.Image != null)
             {
                 canvas.Image = null;
@@ -82,33 +101,25 @@ namespace Letter_Recognition
         }
         private void resultBtn_Click(object sender, EventArgs e)
         {
+            dataGridView1.Rows.Clear();
             PredictionLabel.Text = letter;
             resultBtn.Enabled = false;
-            submitBtn.Enabled = true;
+            submitBtn.Enabled = false;
+
+            dataGridView1.Rows.Add();
+
+            for (int i = 0; i < dataGridView1.Columns.Count; i++)
+            {
+                dataGridView1.Rows[0].Cells[i].Value = probabilities[25-i];
+            }
         }
         private void submitBtn_Click(object sender, EventArgs e)
         {
-            canvas.Image.Save("canvas.bmp");
             submitBtn.Enabled = false;
-            Bitmap image = new Bitmap("canvas.bmp");
-            Bitmap resized = new Bitmap(image, new Size(28, 28));
-            resized.Save("resized.bmp");
-            int counter = 1;
-            List<Dictionary<string, string>> jsonList = new List<Dictionary<string, string>>();
-            Dictionary<string, string> word = new Dictionary<string, string>();
-            word.Add("Col1", "0");
-            counter++;
-            for (int x = 0; x < 28; x++)
-            {
-                for (int y = 0; y < 28; y++)
-                {
-                    word.Add(("Col" + counter), resized.GetPixel(y, x).A.ToString());
-                    counter++;
-                }
-            }
-            jsonList.Add(word);
-            image.Dispose();
-            InvokeRequestResponseService(jsonList).Wait();
+            probabilities.Clear();
+
+            ParseDataToWebService();
+            
             resultBtn.Enabled = true;
         }
 
@@ -135,142 +146,7 @@ namespace Letter_Recognition
                 if (response.IsSuccessStatusCode)
                 {
                     string result = await response.Content.ReadAsStringAsync();
-                    string[] results = result.Split(',');
-                    string[] predictionLine = results[results.Length - 1].Split(':', '}');
-                    switch (Convert.ToInt32(predictionLine[1].Replace("\"", "")))
-                    {
-                        case 0:
-                            {
-                                letter = "A";
-                                break;
-                            }
-                        case 1:
-                            {
-                                letter = "B";
-                                break;
-                            }
-                        case 2:
-                            {
-                                letter = "C";
-                                break;
-                            }
-                        case 3:
-                            {
-                                letter = "D";
-                                break;
-                            }
-                        case 4:
-                            {
-                                letter = "E";
-                                break;
-                            }
-                        case 5:
-                            {
-                                letter = "F";
-                                break;
-                            }
-                        case 6:
-                            {
-                                letter = "G";
-                                break;
-                            }
-                        case 7:
-                            {
-                                letter = "H";
-                                break;
-                            }
-                        case 8:
-                            {
-                                letter = "I";
-                                break;
-                            }
-                        case 9:
-                            {
-                                letter = "J";
-                                break;
-                            }
-                        case 10:
-                            {
-                                letter = "K";
-                                break;
-                            }
-                        case 11:
-                            {
-                                letter = "L";
-                                break;
-                            }
-                        case 12:
-                            {
-                                letter = "M";
-                                break;
-                            }
-                        case 13:
-                            {
-                                letter = "N";
-                                break;
-                            }
-                        case 14:
-                            {
-                                letter = "O";
-                                break;
-                            }
-                        case 15:
-                            {
-                                letter = "P";
-                                break;
-                            }
-                        case 16:
-                            {
-                                letter = "Q";
-                                break;
-                            }
-                        case 17:
-                            {
-                                letter = "R";
-                                break;
-                            }
-                        case 18:
-                            {
-                                letter = "S";
-                                break;
-                            }
-                        case 19:
-                            {
-                                letter = "T";
-                                break;
-                            }
-                        case 20:
-                            {
-                                letter = "U";
-                                break;
-                            }
-                        case 21:
-                            {
-                                letter = "V";
-                                break;
-                            }
-                        case 22:
-                            {
-                                letter = "W";
-                                break;
-                            }
-                        case 23:
-                            {
-                                letter = "X";
-                                break;
-                            }
-                        case 24:
-                            {
-                                letter = "Y";
-                                break;
-                            }
-                        case 25:
-                            {
-                                letter = "Z";
-                                break;
-                            }
-                    }
-
+                    GetPredictionValues(result);
                 }
                 else
                 {
@@ -281,5 +157,51 @@ namespace Letter_Recognition
                 }
             }
         }
+
+        void ParseDataToWebService()
+        {
+            int counter = 1;
+
+            canvas.Image.Save("canvas.bmp");
+
+            Bitmap image = new Bitmap("canvas.bmp");
+            Bitmap resized = new Bitmap(image, new Size(28, 28));
+            resized.Save("resized.bmp");
+
+            List<Dictionary<string, string>> jsonList = new List<Dictionary<string, string>>();
+            Dictionary<string, string> word = new Dictionary<string, string>();
+
+            word.Add("Col1", "0");
+
+            for (int x = 0; x < 28; x++)
+            {
+                for (int y = 0; y < 28; y++)
+                {
+                    counter++;
+                    word.Add(("Col" + counter), resized.GetPixel(y, x).A.ToString());
+
+                }
+            }
+
+            jsonList.Add(word);
+            image.Dispose();
+            InvokeRequestResponseService(jsonList).Wait();
+        }
+        
+        static void GetPredictionValues(string result)
+        {
+            string[] results = result.Split(',');
+            for (int i = results.Length - 2; i > results.Length - 28; i--)
+            {
+                double probability = Convert.ToDouble(results[i].Split(':')[1].Replace("\"", ""));
+                double roundValue = Math.Round(probability, 4);
+                probabilities.Add(roundValue);
+            }
+            string[] predictionLine = results[results.Length - 1].Split(':', '}');
+            int asciiValue = Convert.ToInt32(predictionLine[1].Replace("\"", "")) + 65;
+            letter = ((char)asciiValue).ToString();
+        }
+
+
     }
 }
